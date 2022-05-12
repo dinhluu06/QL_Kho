@@ -79,9 +79,7 @@
     <Compile Include="Gui\UC_NCC.Designer.cs">
       <DependentUpon>UC_NCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gui\UC_NhapHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Gui\UC_NhapHang.cs" />
     <Compile Include="Gui\UC_NhapHang.Designer.cs">
       <DependentUpon>UC_NhapHang.cs</DependentUpon>
     </Compile>
