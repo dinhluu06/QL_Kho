@@ -14,7 +14,7 @@ namespace QL_Kho.Gui
 {
     public partial class UC_NhapHang : UserControl
     {
-        
+
         public UC_NhapHang()
         {
             InitializeComponent();
@@ -26,13 +26,13 @@ namespace QL_Kho.Gui
             a = BUS.BUS.xuat_pn();
             dgvphieuNhap.DataSource = a;
         }
-        
+
         private void dgvphieuNhap_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtma_PN.Text = dgvphieuNhap.CurrentRow.Cells[0].Value.ToString();
             txttongTien.Text = dgvphieuNhap.CurrentRow.Cells[2].Value.ToString();
             datePK.Text = dgvphieuNhap.CurrentRow.Cells[1].Value.ToString();
-           
+
 
             dgvCTN.DataSource = BUS.BUS.xuat_ctn(txtma_PN.Text);
         }
@@ -40,7 +40,7 @@ namespace QL_Kho.Gui
         private void UC_NhapHang_Load(object sender, EventArgs e)
         {
             load();
-         
+            txttongTien.Enabled = false;
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace QL_Kho.Gui
             a.NgayNhap = datePK.Value;
 
             a.TongTien = float.Parse(txttongTien.Text);
-           
+
             if (BUS.BUS.them_pn(a) != 0)
             {
                 MessageBox.Show("Them thanh cong");
@@ -63,8 +63,8 @@ namespace QL_Kho.Gui
             PhieuNhap a = new PhieuNhap();
             a.MaPN = txtma_PN.Text.Trim();
             a.NgayNhap = datePK.Value;
-
-            a.TongTien = float.Parse(txttongTien.Text);
+            txttongTien.Enabled = false;
+           
 
             if (BUS.BUS.sua_PN(a) != 0)
             {
@@ -160,8 +160,8 @@ namespace QL_Kho.Gui
             txtmaHH.Text = dgvCTN.CurrentRow.Cells[1].Value.ToString();
             txtdonGia.Text = dgvCTN.CurrentRow.Cells[3].Value.ToString();
             txt_soLuong.Text = dgvCTN.CurrentRow.Cells[2].Value.ToString();
-            
-        
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
