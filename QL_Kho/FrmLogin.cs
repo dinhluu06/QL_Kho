@@ -19,6 +19,7 @@ namespace QL_Kho
         public FrmLogin()
         {
             InitializeComponent();
+            //loi
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
